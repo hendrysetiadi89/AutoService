@@ -4,13 +4,19 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.featurea.databinding.ActivityFeatureABinding
 import com.example.featurebcontract.FeatureBContract
+import kotlinx.coroutines.launch
 import java.util.*
 
 class FeatureAActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFeatureABinding
+
+    private var hasObserved= false
 
     private val featureBContract:FeatureBContract by lazy {
         val loader: ServiceLoader<FeatureBContract> =
@@ -44,6 +50,22 @@ class FeatureAActivity : AppCompatActivity() {
                 .replace(R.id.content, f)
                 .commit()
         }
+
+        binding.btnViewmodelB.setOnClickListener {
+            startObserving()
+        }
+    }
+
+    fun startObserving(){
+        if (hasObserved) return
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                featureBContract.getViewModel(this@FeatureAActivity).getOutputFlow().collect {
+                    binding.txtVmoutpput.text = it.toString()
+                }
+            }
+        }
+        hasObserved = true
     }
 
 

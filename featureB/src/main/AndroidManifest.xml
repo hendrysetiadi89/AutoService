@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name=".FeatureBActivity"
+            android:name=".activity.FeatureBActivity"
             android:label="Feature B"
             android:exported="false">
             <intent-filter>

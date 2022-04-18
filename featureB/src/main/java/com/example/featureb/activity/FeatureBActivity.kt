@@ -1,8 +1,10 @@
-package com.example.featureb
+package com.example.featureb.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.featureb.R
 import com.example.featureb.databinding.ActivityFeatureBBinding
+import com.example.featureb.fragment.FeatureBFragment
 
 class FeatureBActivity : AppCompatActivity() {
 
