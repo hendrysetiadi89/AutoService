@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FeatureAActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ini Feature A"/>
+
+    <Button
+        android:id="@+id/btn_goToFeatureB1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go To Feature B (intent filter)" />
+
+    <Button
+        android:id="@+id/btn_goToFeatureB2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go To Feature B (auto service)" />
+
+    <Button
+        android:id="@+id/btn_serviceB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Launch Any Task at Feature B (auto service)" />
+
+    <Button
+        android:id="@+id/btn_fragmentB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Fragment at Feature B and show it" />
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <Button
+        android:id="@+id/btn_viewmodelB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get ViewModel at Feature B and execute it" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

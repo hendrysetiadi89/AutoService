@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.featurea">
+
+    <application>
+        <activity
+            android:exported="false"
+            android:name=".FeatureAActivity"
+            android:label="Feature A" >
+            <intent-filter>
+                <action android:name="com.example.internal.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="featurea"
+                    android:path="/home"
+                    android:scheme="example" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
