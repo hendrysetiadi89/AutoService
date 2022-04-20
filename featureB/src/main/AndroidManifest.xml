@@ -9,16 +9,20 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="com.example.internal.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
                 <data
                     android:host="featureb"
                     android:path="/home"
                     android:scheme="example" />
             </intent-filter>
         </activity>
+
+        <service android:name=".service.CustomService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.service.featureB" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

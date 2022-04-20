@@ -24,7 +24,13 @@
         android:text="Go To Feature B (auto service)" />
 
     <Button
-        android:id="@+id/btn_serviceB"
+        android:id="@+id/btn_serviceB1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Launch Any Task at Feature B (service)" />
+
+    <Button
+        android:id="@+id/btn_serviceB2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Launch Any Task at Feature B (auto service)" />

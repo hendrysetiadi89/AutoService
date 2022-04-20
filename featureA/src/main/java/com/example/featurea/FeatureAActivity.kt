@@ -40,7 +40,13 @@ class FeatureAActivity : AppCompatActivity() {
             featureBContract.goToFeatureB(this)
         }
 
-        binding.btnServiceB.setOnClickListener {
+        binding.btnServiceB1.setOnClickListener {
+            val intent = Intent("com.service.featureB")
+            intent.`package` = this@FeatureAActivity.packageName
+            startService(intent)
+        }
+
+        binding.btnServiceB2.setOnClickListener {
             featureBContract.launchTaskLalala(this)
         }
 
