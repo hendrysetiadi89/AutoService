@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentFactory
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -52,6 +53,9 @@ class FeatureAActivity : AppCompatActivity() {
 
         binding.btnFragmentB.setOnClickListener {
             val f = featureBContract.getFragmentB()
+//            val cls = FragmentFactory.loadFragmentClass(classLoader,
+//                "com.example.featureb.fragment.FeatureBFragment")
+//            val f = cls.getConstructor().newInstance()
             supportFragmentManager.beginTransaction()
                 .replace(R.id.content, f)
                 .commit()
